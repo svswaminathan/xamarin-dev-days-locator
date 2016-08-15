@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+    </dependencies>
+    <scenes>
+        <!--First-->
+        <!--Second-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController" customClass="DevDaysTabBarController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue id="132" destination="91" kind="relationship" relationship="viewControllers"/>
+                        <outlet property="myTabs" destination="W28-zg-YXA" id="name-outlet-W28-zg-YXA"/>
+                        <segue id="234" destination="188" kind="relationship" relationship="viewControllers"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8" y="-27"/>
+        </scene>
+        <scene sceneID="90">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="91" sceneMemberID="viewController" customClass="DevDaysNavigationController" storyboardIdentifier="DevDaysNavigationController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="94">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="93" kind="relationship" relationship="rootViewController" id="92"/>
+                        <outlet property="AgendaItem" destination="131" id="name-outlet-131"/>
+                    </connections>
+                    <tabBarItem key="tabBarItem" title="Agenda" id="131" image="agenda-icon.png"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="95" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749" y="-367"/>
+        </scene>
+        <scene sceneID="96">
+            <objects>
+                <viewController id="93" sceneMemberID="viewController" customClass="AgendaViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="88"/>
+                        <viewControllerLayoutGuide type="bottom" id="89"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="98">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Agenda" id="97"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="99" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1419" y="-373"/>
+        </scene>
+        <scene sceneID="187">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="188" sceneMemberID="viewController" customClass="LocationsNavigationController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="191">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="190" kind="relationship" relationship="rootViewController" id="189"/>
+                    </connections>
+                    <tabBarItem key="tabBarItem" id="233" tag="0" title="Events" image="events-icon.png"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="192" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="624" y="1032"/>
+        </scene>
+        <scene sceneID="193">
+            <objects>
+                <viewController id="190" sceneMemberID="viewController" customClass="LocationsViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="185"/>
+                        <viewControllerLayoutGuide type="bottom" id="186"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="195">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Events" id="194"/>
+                    <connections/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="196" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1299" y="1033"/>
+        </scene>
+        <scene sceneID="515">
+            <objects>
+                <viewController id="516" sceneMemberID="viewController" customClass="LocationDetailViewController" storyboardIdentifier="LocationDetailViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="513"/>
+                        <viewControllerLayoutGuide type="bottom" id="514"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="center" id="517">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews/>
+                        <color key="backgroundColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                    </view>
+                    <connections>
+                        <outlet property="LocationDetailView" destination="517" id="name-outlet-517"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="518" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2021" y="1025"/>
+        </scene>
+        <scene sceneID="597">
+            <objects>
+                <viewController id="598" sceneMemberID="viewController" customClass="RegistrationWebViewController" storyboardIdentifier="RegistrationWebViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="595"/>
+                        <viewControllerLayoutGuide type="bottom" id="596"/>
+                    </layoutGuides>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="600" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2016" y="303"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="agenda-icon.png" width="20" height="20"/>
+        <image name="events-icon.png" width="20" height="20"/>
+    </resources>
+</document>
