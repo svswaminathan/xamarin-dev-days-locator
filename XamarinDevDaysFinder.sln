@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinDevDaysFinder", "XamarinDevDaysFinder.csproj", "{B736609F-FFD4-48E9-A1B9-41B445DDFDC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinDevDaysFinder.iOS", "XamarinDevDaysFinder.iOS.csproj", "{B736609F-FFD4-48E9-A1B9-41B445DDFDC4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinDevDaysFinder.Core", "XamarinDevDaysFinder.Core.csproj", "{A8ADFAA0-D4DC-4F7A-935E-BA1AC1B68FBA}"
 EndProject
