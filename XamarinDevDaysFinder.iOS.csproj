@@ -99,6 +99,15 @@
     <ImageAsset Include="Assets.xcassets\Second.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Second.imageset\vector.pdf" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-114.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-57.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-568h%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -158,6 +167,9 @@
   <ItemGroup>
     <BundleResource Include="Resources\agenda-icon.png" />
     <BundleResource Include="Resources\events-icon.png" />
+    <BundleResource Include="Images\Xamarin-Dev-Days.png" />
+    <BundleResource Include="Resources\Xamarin-Dev-Days.png" />
+    <BundleResource Include="Resources\xamarin-logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

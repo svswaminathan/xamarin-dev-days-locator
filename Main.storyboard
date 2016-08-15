@@ -130,11 +130,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="600" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2016" y="303"/>
+            <point key="canvasLocation" x="2723" y="1024"/>
         </scene>
     </scenes>
     <resources>
         <image name="agenda-icon.png" width="20" height="20"/>
         <image name="events-icon.png" width="20" height="20"/>
+        <image name="Images/Xamarin-Dev-Days.png" width="1846" height="814"/>
+        <image name="Xamarin-Dev-Days.png" width="700" height="309"/>
+        <image name="xamarin-logo.png" width="400" height="160"/>
     </resources>
 </document>

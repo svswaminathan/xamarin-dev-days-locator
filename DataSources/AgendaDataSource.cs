@@ -27,7 +27,7 @@ namespace XamarinDevDaysFinder
 
 			cell.TextLabel.Text = item.TopicName;
 			cell.DetailTextLabel.Text = item.Timing;
-			//cell.BackgroundColor = UIColor.Blue;
+
 			return cell;
 		}
 

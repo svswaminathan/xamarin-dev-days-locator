@@ -26,11 +26,13 @@ namespace XamarinDevDaysFinder
 			//---- if there are no cells to reuse, create a new one
 			if (cell == null)
 			{
-				cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellIdentifier);
+				cell = new UITableViewCell(UITableViewCellStyle.Value1, CellIdentifier);
 			}
 
 			cell.TextLabel.Text = item.Location.City;
-			cell.DetailTextLabel.Text = item.Date.ToString("D");
+			cell.DetailTextLabel.Text = item.Date.ToString("M");
+
+			cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 			//cell.BackgroundColor = UIColor.Blue;
 			return cell;
 		}

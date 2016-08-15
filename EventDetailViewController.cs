@@ -5,6 +5,7 @@ using XamarinDevDaysFinder.Core;
 using CoreGraphics;
 using MapKit;
 using CoreLocation;
+using Social;
 
 namespace XamarinDevDaysFinder
 {
@@ -12,12 +13,13 @@ namespace XamarinDevDaysFinder
 	{
 		Event selectedEvent;
 		UILabel lblOrganizerKey;
-		UILabel lblOrganizer;
+		UIButton btnOrganizer;
 		UILabel lblUserGroupKey;
 		UILabel lblUserGroup;
 		MKMapView map;
 		UIButton btnRegister;
 		LocationHelper helper = new LocationHelper();
+		SLComposeViewController slComposeViewController;
 
 		public EventDetailViewController(IntPtr handle) : base(handle)
 		{
@@ -38,8 +40,31 @@ namespace XamarinDevDaysFinder
 			lblUserGroupKey = new UILabel();
 			lblUserGroupKey.Text = "UserGroup";
 
-			lblOrganizer = new UILabel();
-			lblOrganizer.Text = selectedEvent.Organizer;
+			btnOrganizer = UIButton.FromType(UIButtonType.RoundedRect);
+			btnOrganizer.SetTitle(selectedEvent.Organizer,UIControlState.Normal);
+			btnOrganizer.TouchUpInside += (sender, e) =>
+			{
+				if (SLComposeViewController.IsAvailable(SLServiceKind.Twitter))
+				{
+					slComposeViewController = SLComposeViewController.FromService(SLServiceKind.Twitter);
+					slComposeViewController.SetInitialText(selectedEvent.Organizer + " : Need info on #XamarinDevDays");
+					slComposeViewController.CompletionHandler += (result) =>
+					{
+						InvokeOnMainThread(() => 
+						{
+							DismissViewController(true, null);
+							UIAlertView messageBox = new UIAlertView("Xamarin Dev Days", "Tweet sent successfully", null, "Cancel","Ok");
+							messageBox.Show();
+						});
+					};
+					PresentViewController(slComposeViewController, true, null);
+				}
+				else
+				{
+					UIAlertView messageBox = new UIAlertView("Xamarin Dev Days", "Configure twitter from settings", null, "Cancel","Ok");
+					messageBox.Show();
+				}
+			};
 
 			lblUserGroup = new UILabel();
 			lblUserGroup.Text = selectedEvent.UserGroup;
@@ -62,7 +87,7 @@ namespace XamarinDevDaysFinder
 				this.NavigationController.PushViewController(new RegistrationWebViewController(new NSUrl(selectedEvent.RegistrationLink)), true);
 			};
 
-			this.View.AddSubviews(lblOrganizerKey, lblOrganizer, lblUserGroupKey, lblUserGroup, map, btnRegister);
+			this.View.AddSubviews(lblOrganizerKey, btnOrganizer, lblUserGroupKey, lblUserGroup, map, btnRegister);
 
 		}
 
@@ -70,7 +95,7 @@ namespace XamarinDevDaysFinder
 		{
 			base.ViewDidLayoutSubviews();
 			lblOrganizerKey.Frame = new CGRect(5, 60, 100, 50);
-			lblOrganizer.Frame = new CGRect(110, 60, 200, 50);
+			btnOrganizer.Frame = new CGRect(110, 60, 200, 50);
 			lblUserGroupKey.Frame = new CGRect(5, 120, 100, 50);
 			lblUserGroup.Frame = new CGRect(110, 120, 200, 50);
 			map.Frame = new CGRect(20, 200, 300, 300);
